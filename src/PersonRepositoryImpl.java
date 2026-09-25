@@ -18,4 +18,12 @@ public class PersonRepositoryImpl implements PersonRepository {
         }
         return p;
     }
+    @Override
+    public int total() {
+        int total = 0;
+        for (Person person : people) {
+            total += person.getAge();
+        }
+        return total;
+    }
 }
