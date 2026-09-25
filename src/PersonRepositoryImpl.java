@@ -38,4 +38,16 @@ public class PersonRepositoryImpl implements PersonRepository {
         }
         return maxPerson;
     }
+
+    @Override
+    public List<Person> gfindByName(String name) {
+        List<Person> p = new ArrayList<>();
+        for (Person person : people) {
+            if (person.getName().equals(name)) {
+                p.add(person);
+            }
+        }
+        return p;
+    }
+
 }
