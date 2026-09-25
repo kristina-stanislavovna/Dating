@@ -26,4 +26,16 @@ public class PersonRepositoryImpl implements PersonRepository {
         }
         return total;
     }
+    @Override
+    public Person max() {
+        Person maxPerson = null;
+        int max = 0;
+        for (Person person : people) {
+            if (person.getAge() > max) {
+                maxPerson = person;
+                max = person.getAge();
+            }
+        }
+        return maxPerson;
+    }
 }
